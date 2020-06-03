@@ -10,7 +10,7 @@ source:
   sha256: 3cc83a03def573882a8deaaf366fe8b195ca8e9e3092617093b786c06d69a8f1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -26,12 +26,15 @@ requirements:
 test:
   commands:
     - "py.test --traceconfig | grep pytest-regtest-{{version}}"
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://gitlab.com/uweschmitt/pytest-regtest
   license: MIT
   license_family: MIT
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: LICENSE.txt
   summary: pytest plugin for regression tests
   dev_url: https://gitlab.com/uweschmitt/pytest-regtest
 
