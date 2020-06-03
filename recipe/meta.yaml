@@ -25,7 +25,7 @@ requirements:
 
 test:
   commands:
-    - "py.test --traceconfig | grep pytest-regtest-{{version}}"
+    - "py.test --traceconfig | grep pytest-regtest-{{ version }}"
     - pip check
   requires:
     - pip
