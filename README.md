@@ -5,7 +5,7 @@ Home: https://gitlab.com/uweschmitt/pytest-regtest
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: pytest plugin for regression tests
 
