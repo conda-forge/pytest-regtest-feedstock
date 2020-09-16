@@ -1,18 +1,18 @@
 {% set name = "pytest-regtest" %}
-{% set version = "1.4.4" %}
+{% set version = "1.4.5" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3cc83a03def573882a8deaaf366fe8b195ca8e9e3092617093b786c06d69a8f1
+  sha256: a1e4e87d483e493d9bf6d15a71a46dedaccb6caab79fa8066f47a8eb3e6f86e3
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -25,7 +25,7 @@ requirements:
 
 test:
   commands:
-    - "py.test --traceconfig | grep pytest-regtest-{{ version }}"
+    - py.test --traceconfig | grep pytest-regtest-{{ version }}
     - pip check
   requires:
     - pip
