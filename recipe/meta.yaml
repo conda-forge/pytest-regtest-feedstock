@@ -1,13 +1,13 @@
 {% set name = "pytest-regtest" %}
-{% set version = "2.0.3" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6f5bbc98ea945256405f57f30c9e169401a8a6c719ae4e160c5c2b4eac2fc24
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: bd08a6161832378b59ecd4f5815fbe26af7cd091db4a1e710e30476d5f3b8832
 
 build:
   number: 0
@@ -17,11 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
-    - setuptools
+    - python >=3.9
+    - hatchling >=1.12.2
   run:
     - pytest >=4.1.0
-    - python >=3.6
+    - python >=3.9
 
 test:
   commands:
