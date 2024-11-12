@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: e294a8febd8821937cd2b62010d05b731af1b9f90692bc60690cb0307e38d9f1
 
 build:
@@ -28,6 +28,7 @@ test:
     - py.test --traceconfig | grep pytest-regtest-{{ version }}
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
