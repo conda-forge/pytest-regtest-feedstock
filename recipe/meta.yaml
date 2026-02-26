@@ -1,5 +1,5 @@
 {% set name = "pytest-regtest" %}
-{% set version = "2.3.5" %}
+{% set version = "2.3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: ffb1d2d36a72efe69613c803477f01b4484c0ad51287c390b1f20ce97d243755
+  sha256: dad5e66b1104dcd4d44fd3addb42710a26ccad0f5336c5413176e0eae1f6fc23
 
 build:
   number: 0
