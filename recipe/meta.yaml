@@ -1,5 +1,5 @@
 {% set name = "pytest-regtest" %}
-{% set version = "2.4.0" %}
+{% set version = "2.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9a971c67c8709c431659c557a13c5e2991420cdb92c038e50eecfbb9062646b0
+  sha256: 84f77f18fa70295377662de96d721d03b32d05509c53e1366aeec11dbed56ec0
 
 build:
   number: 0
@@ -20,8 +20,9 @@ requirements:
     - python {{ python_min }}
     - hatchling >=1.12.2
   run:
-    - pytest >=4.1.0
+    - pytest >7.2.0
     - python >={{ python_min }}
+    - deepdiff >=9.0.0
 
 test:
   commands:
